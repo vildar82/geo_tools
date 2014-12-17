@@ -1,4 +1,4 @@
-# geo-tools - дополнение к AutoCAD
+# Geo_tools - дополнение к AutoCAD на Lisp
 Ссылки на оригинальную программу:
 
 http://geodesist.ru/forum/resources/geo_tools.29/
