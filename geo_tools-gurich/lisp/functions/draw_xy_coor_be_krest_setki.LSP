@@ -1,10 +1,7 @@
 (defun C:draw_xy_coor_be_krest_setki ( / t1 yt xt x1 y1 x2 y2 y x option temp flag); подписывает координаты указанного крестика
   (geo_tools-help "draw_xy_coor_be_krest_setki")
   (terpri)
-  (if
-    (not (tblobjname "dimstyle" "OTI"))
-    (command "_style" "OTI" "P151.TTF" "0" "1" "0" "_n" "_n")
-    )
+  
   (setq option(file-dat-xml-read "draw_xy_coor_be_krest_setki" "Компактно"))
   
     
