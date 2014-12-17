@@ -1,0 +1,8 @@
+(defun C:clear_punkts ( / nabor)
+  (sssetfirst)
+  (if (setq nabor(ssget "_X" (list'(0 . "INSERT")'(2 . "МГГТ *"))))
+    (command "_erase" nabor "")
+    (princ "\nНет пунктов для удаления!")
+    )
+  (princ)
+  )

@@ -1,0 +1,11 @@
+(defun convert-text-file-to-ass-list ( input-file / result n string)
+  (setq n 1)
+  (setq input-file(open input-file "r"))
+  (while (setq string (read-line input-file))
+    (if (=(rem n 100)0)(grtext -1 (strcat"Читаю "(itoa n))))
+    (setq result(append result(list(convert-string-to-ass-list string))))
+    (setq n (1+ n))
+    )
+  (close input-file)
+  result
+  )

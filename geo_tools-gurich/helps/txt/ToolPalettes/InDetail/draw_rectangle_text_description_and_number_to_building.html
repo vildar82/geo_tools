@@ -1,0 +1,26 @@
+Отрисовка здания, буквенного индекса и номера
+<p>Автоматизация отрисовки простых (прямоугольных) зданий</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда: draw_rectangle_text_description_and_number_to_building</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи первую точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на первом угле здания</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи вторую точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на вторм угле здания</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи третью точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на трутьем угле здания</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Введи этажность и буквенный индекс:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Вводит текстовые строки. Здесь используется стандартная AutoCAD команда однострочного текста кроме первой строки с этажностью и горючестью здания можно ввести еще несколько строк которые будут восприняты программой как описание и будут оформлены соответствующе (БСАМом). Дале будет два варианта развития событий:</p>
+<p>если введена одна строка описания и суммарная длинна этой строки и строки с буквенным индексом позволяет разместить обе строки рядом (часто используется при подписи гаражей) будет предложена такая возможность.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Поменять расположение слов? [Да/Нет] &lt;Да&gt;</span></p>
+<p><img class="icon" src="user.gif" alt="user">выбирает <span class="code">Да</span> если необходимо подписать гараж или что то похожее в остальных случаях <span class="code">Нет</span>.</p>
+<p>если описательных строк нет или их больше одной дополнительных вопросов не будет.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи угол для подписи номера дома &lt;Enter - пропуск&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку в угле здания в котором будет подписан номер</p>
+<p>Если нажать Enter больше вопросов не последует - программа завершиться.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Введи номер дома:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Вводит номер дома с клавиатуры</p>
+<p>Стандартная AutoCAD команда однострочного текста (естественно предварительно настроеная на соответствующий текстовый стиль и размер) позволяет подписать номер дома.</p>
+<p>Пример работы программы с двумя строчками описания и номером дома</p>
+<img src="draw_rectangle_text_description_and_number_to_building.gif" width="534" height="323" alt="Пример работы программы">
+<p>Пример работы программы в гаражном случае</p>
+<img src="draw_rectangle_text_description_and_number_to_building_gar.gif" width="529" height="319" alt="Пример работы программы с гаражом">
+<p>Замечен глюк: иногда не верно обрабатывается выравнивание номера дома.</p>

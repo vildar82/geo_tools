@@ -1,0 +1,63 @@
+(defun C:draw_same_obj ( /
+			COLOR LINEWEIGHT OBJ SSNAB
+			)
+  (geo_tools-help "draw_same_obj")
+  (load_global_variable)
+  (setq ssnab (ssget "_I"))
+  (if ssnab
+    (if (> (sslength ssnab)1)
+      (progn
+	(sssetfirst)
+	(setq obj(car(entsel "\nВыбери объект образец: ")))
+	)
+      (setq obj(ssname ssnab 0))
+      )
+    (setq obj(car(entsel "\nВыбери объект образец: ")))
+    )
+  (if obj
+    (progn
+      (vla-StartUndoMark active_document)
+      (sssetfirst)
+      (vla-put-ActiveLayer active_document (vla-item (vla-get-Layers active_document) (cdr(assoc 8 (entget obj)))))
+      (setq color (cdr(assoc 62 (entget obj))))
+      (cond
+	((eq color nil)
+	 (setvar "CECOLOR" "BYLAYER"))
+	((eq color 0)
+	 (setvar "CECOLOR" "BYBLOCK"))
+	(T
+	 (setvar "CECOLOR" (itoa color))
+	 )
+	)
+      (vla-put-ActiveLinetype active_document (vla-item (vla-get-linetypes active_document) (cdr(assoc 6 (entget obj)))))
+      (setq Lineweight (cdr(assoc 370 (entget obj))))
+      (if Lineweight
+	(setvar "CELWEIGHT" Lineweight)
+	(setvar "CELWEIGHT" -1)
+	)
+      (setq type-obj (cdr(assoc 0 (entget obj))))
+      (terpri)
+      (cond
+	((or (eq type-obj "LINE")(eq type-obj "TEXT")(eq type-obj "MTEXT")(eq type-obj "SPLINE")(eq type-obj "CIRCLE")(eq type-obj "ARC"))
+	 (command (strcat "_" type-obj))
+	 )
+	((eq type-obj "LWPOLYLINE")
+	 (setvar "PLINEWID"(cdr(assoc 41 (entget obj))))
+	 (command "_PLINE")
+	 )
+	((eq type-obj "MULTILEADER")
+	(command "_mleader")
+	 )
+	((eq type-obj "INSERT")
+	 (command "_insert" (cdr(assoc 2 (entget obj))) pause (vla-get-XEffectiveScaleFactor (vlax-ename->vla-object obj)) (vla-get-YEffectiveScaleFactor (vlax-ename->vla-object obj)) pause)
+	 )
+	(T
+	 (alert "Ошибка, выбран объект не поддеоживаемого типа!")
+	 )
+	)
+      (vla-EndUndoMark active_document)
+      )
+    (princ "*Ошибка*")
+    )
+  (princ)
+  )

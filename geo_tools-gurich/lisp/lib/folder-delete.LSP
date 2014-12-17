@@ -1,0 +1,23 @@
+(defun folder-delete (patch /)
+  (if
+    (not
+      (vl-catch-all-error-p
+	(vl-catch-all-apply
+	  'vlax-invoke-method
+	  (list
+	    *file-system-object*
+	    'GetFolder
+	    patch
+	    ))))
+    (not
+      (vl-catch-all-error-p
+	(vl-catch-all-apply
+	  'vlax-invoke-method
+	  (list
+	    *file-system-object*
+	    'DeleteFolder
+	    patch
+	    t
+	    ))))
+    )
+  )

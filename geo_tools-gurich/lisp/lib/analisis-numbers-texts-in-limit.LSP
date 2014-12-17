@@ -1,0 +1,15 @@
+(defun analisis-numbers-texts-in-limit ( g1 g2 2Dpline mg / pline spisokv n p)
+  (if (eq(type 2dpline)'LIST)
+    (setq spisokv 2dpline)
+    (setq spisokv (extract_coord_lwpolyline (entget 2Dpline)))
+    )
+  (setq n 0)
+  (repeat (length spisokv)
+    (setq p (car spisokv))
+    (setq spisokv (cdr spisokv))
+    (if (and(or(>(nth 0 p)g1)(=(nth 0 p)g1)) (<(nth 0 p)(+ g2(/ (* 1.6 (/ 5.0 3.0)) (/ 1000.0 mg)))))
+      (setq n (1+ n))
+      )
+    )
+  n
+  );defun

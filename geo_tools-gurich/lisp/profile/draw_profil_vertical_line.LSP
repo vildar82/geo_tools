@@ -1,0 +1,18 @@
+(defun draw_profil_vertical_line (q_sel_v_pr t0! mg pline / n p spisokv t_do_linii)
+	 (cond
+	   ((= q_sel_v_pr 0)(setq t_do_linii(mapcar '- t0! (list 0 (/ 90 (/ 1000 mg))))))
+	   ((= q_sel_v_pr 1)(setq t_do_linii(mapcar '- t0! (list 0 (/ 90 (/ 1000 mg))))))
+	   ((= q_sel_v_pr 2)(setq t_do_linii(mapcar '- t0! (list 0 (/ 65 (/ 1000 mg))))))
+	   ((= q_sel_v_pr 3)(setq t_do_linii(mapcar '- t0! (list 0 (/ 70 (/ 1000 mg))))))
+	   ((= q_sel_v_pr 4)(setq t_do_linii(mapcar '- t0! (list 0 (/ 95 (/ 1000 mg))))))
+	   ((= q_sel_v_pr 5)(setq t_do_linii(mapcar '- t0! (list 0 (/ 90 (/ 1000 mg))))))
+	   )
+	 (if (= q_chek_v_pr 0)(progn (initget)(setq t_do_linii(getpoint "\n”кажи до куда будем опускать линии: "))))
+	 (setq spisokv (extract_coord_lwpolyline (entget pline)))
+	 (setq n (length spisokv))
+	 (repeat n
+	   (setq p (car spisokv))
+	   (setq spisokv (cdr spisokv))
+	   (entmake (list '(0 . "LINE") '(6 . "Continuous") (cons 10 p) (cons 11 (list (nth 0 p)(nth 1 t_do_linii)))))
+	   )
+	 )

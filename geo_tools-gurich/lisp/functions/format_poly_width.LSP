@@ -1,0 +1,5 @@
+(defun C:format_poly_width ( / WID)
+(geo_tools-help "format_poly_width")
+  (initget 1 )(setq WID (getreal "\nВведи толщину полилинии в милиметрах: "))
+  (setvar "PLINEWID" (/ WID (getvar "CANNOSCALEVALUE")))
+  )

@@ -1,0 +1,16 @@
+(defun draw-reactive-profile-text-3dpolyline-obj (elevation-3dpoly-obj / list-points list_text_obj text_obj)
+  (if (not model_spece)(progn(vl-load-com)(setq model_spece(vla-get-ModelSpace(vla-get-ActiveDocument(vlax-get-acad-object))))))
+  (setq list-points (list-coordinates-polyline elevation-3dpoly-obj))
+  (foreach x list-points
+    (setq text_obj (vla-AddText model_spece (rtos(nth 2 x)2 3) (vlax-3D-point x) (/ 2.5 (getvar "CANNOSCALEVALUE"))))
+    (vla-put-Alignment text_obj 9)
+    (vla-put-TextAlignmentPoint text_obj (vlax-3D-point x))
+    (vla-put-Rotation text_obj 0)
+    (vla-put-Linetype text_obj "Continuous")
+    (vla-put-Layer text_obj (vla-get-Layer elevation-3dpoly-obj))
+    (vla-put-TrueColor text_obj (vla-get-TrueColor elevation-3dpoly-obj))
+    (vla-Update text_obj)
+    (setq list_text_obj (append list_text_obj (list text_obj)))
+    )
+  list_text_obj
+  )

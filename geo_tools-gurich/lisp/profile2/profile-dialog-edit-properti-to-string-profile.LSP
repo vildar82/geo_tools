@@ -1,0 +1,32 @@
+(defun profile-dialog-edit-properti-to-string-profile (input-list / dcl_id str-list n result-list)
+  ; диалоговое окно редактирования параметров строки подвала профиля
+  (setq dcl_id (geo-tools-load-dialog "d_profile_str_edit"))
+  (new_dialog "d_profile_str_edit" dcl_id)
+  (setq str-list (list "name" "code" "h-str" "sel-uklon" "dec" "dec-downgrade" "h-txt" "flag-circle" "min-angle" "obj" "list-obj"))
+  (setq n 0)
+  (repeat (length input-list)
+  (if (eq (nth n input-list) "-")
+    (mode_tile (nth n str-list) 1)
+    (progn
+      (set_tile (nth n str-list) (nth n input-list))
+      ))
+    (setq n (1+ n))
+    )
+  (action_tile "accept"
+    (vl-prin1-to-string
+      '(progn
+	(setq n 0)
+	(repeat (length input-list)
+	 (if (eq (nth n input-list) "-")
+	  (setq result-list (append result-list (list "-")))
+	  (if (eq n 1)(setq result-list (append result-list (list (nth n input-list))))
+	  (setq result-list (append result-list (list (get_tile (nth n str-list))))))
+	  )
+	 (setq n (1+ n))
+	 )
+	(done_dialog 1)
+	)
+      )
+    )
+  (if (>(start_dialog)0)result-list nil)
+  )

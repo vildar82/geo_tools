@@ -1,0 +1,46 @@
+(defun analisis_granic_joining (list_granic / granica1 granica2 p11 p12 p21 p22 new_list_granic); модуль объединения перкрывающихся и вложеных границ
+  (if (=(length list_granic)1)
+    (setq new_list_granic list_granic)
+    (while (not(<(length list_granic)2))
+      (setq granica1 (car list_granic))
+      (setq list_granic (cdr list_granic))
+      (setq granica2 (car list_granic))
+      (setq p11 (car granica1))
+      (setq p12 (cadr granica1))
+      (setq p21 (car granica2))
+      (setq p22 (cadr granica2))
+      (while (and(or(> p12 p21)(= p12 p21))(not(and (eq p21 nil)(eq p22 nil))))
+	(if (or(> p12 p22)(= p12 p22))
+	  (if (/=(length list_granic)0)
+	    (setq list_granic (cdr list_granic))
+	    )
+	  (progn
+	    (setq p12 p22)
+	    (if (/=(length list_granic)0)
+	      (setq list_granic (cdr list_granic))
+	      )
+	    )
+	  )
+	(if (/=(length list_granic)0)
+	  (progn
+	    (setq granica2 (car list_granic))
+	    (setq p21 (car granica2))
+	    (setq p22 (cadr granica2))
+	    )
+	  (progn
+	    (setq p21 nil)
+	    (setq p22 nil)
+	    )
+	  )
+	);while
+      (setq new_list_granic (append new_list_granic(list (list p11 p12))))
+      (if (=(length list_granic)1); обработка последней одинокой границы
+	(progn
+	  (setq granica2 (car list_granic))
+	  (setq new_list_granic (append new_list_granic(list granica2)))
+	  )
+	)
+      )
+    )
+  new_list_granic
+  )

@@ -1,0 +1,17 @@
+(defun analisis-ss-raw-string-nikon (string current-param / )
+  ; преобразование строки с описанием измерения в ассоциативный список с конвертацией
+  (setq list-str (convert-string-to-list-be-delimiter string ","))
+  (list
+    (list "name" (nth 1 list-str))
+    (list "h-target" (atof(nth 2 list-str)))
+    (list "oblique-distance" (atof(nth 3 list-str)))
+    (list "horizon-angle" (convert-str-to-deg-grad(nth 4 list-str)))
+    (list "vertical-angle" (convert-str-to-deg-grad(nth 5 list-str)))
+    (list "temp" (get-item-by-name-in-list current-param "temp"))
+    (list "press" (get-item-by-name-in-list current-param "press"))
+    (list "prism" (get-item-by-name-in-list current-param "prism"))
+    (list "data" (get-item-by-name-in-list current-param "data"))
+    (list "time" (nth 6 list-str))
+    (list "code" (nth 7 list-str))
+    )
+  )

@@ -1,0 +1,11 @@
+(defun convert-child-to-ass-list (child / collection result n punkt)
+  (setq collection (XML-Get-Children child nil))
+  (setq n 0)
+  (while (setq punkt (vlax-get-property collection 'item n))
+    (if (=(rem n 100)0)(grtext -1 (strcat"Чтение "(itoa n)"/"(itoa(vlax-get-property collection 'length)))))
+    (setq result(append result(list(convert-punkt-recorg-to-ass-list punkt))))
+    (setq n (1+ n)))
+  (vlax-release-object collection)
+  (grtext -1 "")
+  result
+  )

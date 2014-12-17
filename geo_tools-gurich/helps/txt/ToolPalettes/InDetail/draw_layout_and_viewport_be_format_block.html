@@ -1,0 +1,18 @@
+Оформление листа
+<p>Оформление нового листа и видового экрана по блоку вспомогательной рамки.</p>
+<p>Работа с программой предпологает следующую процедуру. Сначала пользователь разбивает, подготавливаемую к печати трассу, на листы с помощью вспомогательных рамок показывающих полезную площадь форматного листа за вычетом штампа (для генерации вспомогательных рамок используется <a href="dialog_ramka_format_manager.xxx" >Менеджер форматов</a>).</p>
+<p>В инструкциях есть <a href="../../Instructions/draw_layout.xxx" >статья</a> описывающая взаимодействие программ.</p>
+<p>Затем запускаем программу с помощью которой имеем возможность преобразовать любую из вспомогательных рамок в оформленый лист с заполненым штампом.</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда: draw_layout_and_viewport_be_format_block</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Текущие настройки: Вернуться в модель: Да; Тип вставляемого штампа:</span> текущий штамп (в этой строке указаны текущие настройки)</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Название листа [Настройки] &lt;</span>автоимя следующего листа<span class="code">&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Вводит название нового листа или выбирает <span class="bold">Настройки</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">[Вернуться в модель/Тип штампа]&lt;продолжить&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Выбирает что хочется настроить <span class="bold">Тип штампа</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Тип вставляемого штампа[Авто/ГОСТ/Большой/Маленький/Нет]&lt;</span>текущий штамп<span class="code">&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Выбирает тип вставляемого с листом штампа, режим Авто подразумевает автоопределение нужного штампа исходя из того какой штамп был выбран при создании вспомогательной рамки. Вставляется текущий штамп! настройка текущего штампа производится в программе <a href="dialog_shtamp_editor_akteros.xxx" >Штамп редактор</a> и <a href="dialog_shtamp_editor_gost.xxx" >Штамп редактор ГОСТ</a>.</p>
+<p>или <span class="bold">Вернуться в модель</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Вернуться в модель[Да/Нет]&lt;Да&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Выбирает <span class="italic">Да</span> если после создания листа необходимо вернуться в модель (например чтобы сразу указать следующий лист) или <span class="italic">Нет</span> чтобы остаться в листе</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Выбери блок вспомогательной рамки:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает блок вспомогательной рамки</p>

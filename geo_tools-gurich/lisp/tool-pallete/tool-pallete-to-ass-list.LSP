@@ -1,0 +1,33 @@
+(defun tool-pallete-to-ass-list ( / all-palletes-num button-list current-macro current-pallete-list list-all-pallets macro-list name number numers-commands o-doc palettes pallete-patch-list patch)
+  ; 
+  (setq o-doc (XML-Get-XMLObject (strcat *geo_tools_root_dir* "\\ToolPalette\\AcTpCatalog.atc")))
+  (setq Palettes (XML-Get-Child o-doc nil "Palettes"))
+  
+  (foreach x (XML-Get-ChildList Palettes)
+    (setq patch (XML-Get-Attribute(XML-Get-Child x nil "Url")"href" ""))
+    (setq name(get-name-tool-pallete x))
+    (setq pallete-patch-list (append pallete-patch-list (list  patch)))
+    )
+  (vlax-release-object Palettes)
+  (vlax-release-object o-doc)
+  (foreach y pallete-patch-list
+    (setq list-all-pallets (append list-all-pallets (list (tool-pallete-list-commands (strcat *geo_tools_root_dir* "\\ToolPalette\\"y)))))
+    )
+  (foreach z list-all-pallets
+    (setq current-pallete-list (list(list "name-pallete" (get-item-by-name-in-list z "name-pallete"))))
+    (foreach w (get-item-by-name-in-list z "pallete-commands")
+      (if (setq number(analysis-number-item-in-list (setq current-macro(get-item-by-name-in-list w "macro")) macro-list))
+	(setq numers-commands (append numers-commands (list number)))
+	(progn
+	  (setq button-list (append button-list (list w)))
+	  (setq macro-list (append macro-list (list current-macro)))
+	  (setq numers-commands (append numers-commands (list (1-(length button-list)))))
+	  )
+	)
+      )
+    (setq current-pallete-list(append current-pallete-list (list (list "pallete-commands" numers-commands))))
+    (setq all-palletes-num(append all-palletes-num (list current-pallete-list)))
+    (setq numers-commands nil)
+    )
+  (list all-palletes-num button-list)
+  )

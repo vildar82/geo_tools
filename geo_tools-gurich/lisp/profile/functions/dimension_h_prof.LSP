@@ -1,0 +1,18 @@
+(defun C:dimension_h_prof (/ t1 t2 h flag); вычисляет превышение между двумя указаными точками на профиле
+(geo_tools-help "dimension_h_prof")
+  (setq mv (file_dat_r_g_w "r" "mv" nil))
+  (setq mg (file_dat_r_g_w "r" "mg" nil))
+  (setq usl_z (file_dat_r_g_w "r" "usl_z" nil))
+  (while
+    (not flag)
+    (redraw)
+    (setq t1(get_p_usl_z_m_mg"\nУкажи точку #1 профиле: "))
+    (draw_temp_X t1 1)
+    (initget)(setq t2(getpoint "\nУкажи точку #2 на профоле: "))
+    (draw_temp_X t2 1)
+    (setq h (rtos (* (-(nth 1 t2)(nth 1 t1)) (/ (* mv (/ 1000 mg)) 1000)) 2 2))
+    (initget "Выход Продолжить")(setq flag (getkword(strcat "\nПревышение " h "м [Выход/Продолжить] <Продолжить>: ")))
+    (if flag(if (eq flag "Выход")(setq flag T)(setq flag nil)))
+    )
+  (princ)
+  )

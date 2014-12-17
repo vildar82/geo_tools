@@ -1,0 +1,11 @@
+(defun get-acad-ver ( / var-acad-ver)
+  (setq var-acad-ver (getvar "ACADVER"))
+  (cond
+    ((eq var-acad-ver "17.1s (LMS Tech)")"2008")
+    ((eq var-acad-ver "17.2s (LMS Tech)")"2009")
+    ((eq var-acad-ver "18.0s (LMS Tech)")"2010")
+    ((eq var-acad-ver "18.1s (LMS Tech)")"2011")
+    ((eq var-acad-ver "18.2s (LMS Tech)")"2012")
+    ((eq var-acad-ver "19.0s (LMS Tech)")"2013")
+    )
+  )

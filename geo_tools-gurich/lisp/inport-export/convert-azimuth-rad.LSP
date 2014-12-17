@@ -1,0 +1,7 @@
+(defun convert-azimuth-rad (azimuth /)
+  ;перевод дирекционного угола (0 на север увеличение по часовой) в угол в радианах (0 на восток увеличение против часовой)
+  (if (< 90.0 azimuth)
+    (convert-grad-rad(- 360.0(- azimuth 90.0)))
+    (convert-grad-rad(- 90.0 azimuth))
+    )
+  )

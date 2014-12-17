@@ -1,0 +1,8 @@
+(defun listtext-to-string-add (input-list add-item / result-list n)
+  (setq n 0)
+  (repeat (1-(length input-list))
+    (setq result-list(append result-list(list (strcat (nth n input-list)add-item))))
+    (setq n (1+ n))
+    )
+  (append result-list(list (nth n input-list)))
+  )

@@ -1,0 +1,20 @@
+(defun convert-safearray-to-list-points (input-safearray kol-vo / result n input-list)
+  ; конвертирование безопасного массива в список координат точек, kol-vo - количество координат в точке 2=XY 3=XYZ
+  (setq input-list(vlax-safearray->list input-safearray))
+  (setq n 0)
+  (cond
+    ((eq kol-vo 2)
+     (repeat (/(length input-list)2)
+       (setq result (append result (list(list (nth n input-list)(nth (1+ n) input-list)))))
+       (setq n (+ n 2))
+       )
+     )
+    ((eq kol-vo 3)
+     (repeat (/(length input-list)3)
+       (setq result (append result (list(list (nth n input-list)(nth (1+ n) input-list)(nth (+ n 2) input-list)))))
+       (setq n (+ n 3))
+       )
+     )
+    )
+  result
+  )

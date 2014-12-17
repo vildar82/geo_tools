@@ -1,0 +1,12 @@
+(defun convert-ass-list-to-punkt-recorg (parent ass-list / temp point-item)
+  (setq point-item (XML-Add-Child parent "punct"))
+  (XML-Add-Attribute point-item "name" (cadr (assoc "name" ass-list)))
+  (if(setq temp(cadr(assoc"N"ass-list)))(XML-Add-Attribute point-item"N"temp))
+  (if(setq temp(cadr(assoc"E"ass-list)))(XML-Add-Attribute point-item"E"temp))
+  (if(setq temp(cadr(assoc"Z"ass-list)))(XML-Add-Attribute point-item"Z"temp))
+  (if(setq temp(cadr(assoc"type"ass-list)))(XML-Add-Attribute point-item"type"temp))
+  (if(setq temp(cadr(assoc"address"ass-list)))(XML-Add-Attribute point-item"address"temp))
+  (if(setq temp(cadr(assoc"year"ass-list)))(XML-Add-Attribute point-item"year"temp))
+  (if(setq temp(cadr(assoc"comment"ass-list)))(XML-Add-Attribute point-item"comment"temp))
+  point-item
+  )

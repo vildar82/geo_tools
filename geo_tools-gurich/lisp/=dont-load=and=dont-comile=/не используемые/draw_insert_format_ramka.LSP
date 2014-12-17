@@ -1,0 +1,6 @@
+(defun C:draw_insert_format_ramka (/ block_name)
+(geo_tools-help "draw_insert_format_ramka")
+  (initget 1 )(setq block_name (getstring T "\nВведи имя блока: "))
+  (draw_blok_ramka block_name "Нет" nil T nil)
+  (princ)
+  )

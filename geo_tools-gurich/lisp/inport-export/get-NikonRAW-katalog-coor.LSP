@@ -1,0 +1,5 @@
+(defun get-NikonRAW-katalog-coor (put-file / structure-list)
+  (setq structure-list(convert-raw-list-to-structure (file_read_to_list put-file)))
+  (setq structure-list(calculation-coor-of-raw structure-list))
+  (get-item-by-name-in-list structure-list "catalog-coord")
+  )

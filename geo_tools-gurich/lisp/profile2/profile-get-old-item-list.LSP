@@ -1,0 +1,20 @@
+(defun profile-get-old-item-list (/ old-item-list)
+  (setq old-item-list(vlax-ldata-get "geo_tools_dictionary" "old-profile-item-list"))
+  (if (not old-item-list)
+    (progn
+    (setq old-item-list (list (list "vertical-scale" 100)
+			      (list "horizontal-scale" 500)
+			      (list "reference-level" 100.00)
+			      (list "height-text" 3.5)
+			      (list "accuracy" 2)
+			      (list "sel-uklon" 1)
+			      (list "accuracy-downgrade" 3)
+			      (list "picket-first" 0.0)))
+    (vlax-ldata-put "geo_tools_dictionary" "old-profile-item-list" old-item-list)
+    )
+    (if
+      (= (assoc "picket-first" old-item-list ) nil)
+      (setq old-item-list (append old-item-list (list (list "picket-first" 0.0)))))
+    )
+  old-item-list
+  )

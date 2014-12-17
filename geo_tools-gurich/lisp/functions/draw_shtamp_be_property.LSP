@@ -1,0 +1,5 @@
+(defun C:draw_shtamp_be_property ( / shtamp)
+(geo_tools-help "draw_shtamp_be_property")
+  (initget 1)(setq shtamp (getstring T "\nКакой штамп будем вставлять?: "))
+  (draw_blok_shtamp shtamp "Нет")
+  )

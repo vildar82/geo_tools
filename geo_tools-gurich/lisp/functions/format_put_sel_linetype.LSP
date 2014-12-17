@@ -1,0 +1,26 @@
+(defun C:format_put_sel_linetype ( / OBJ SSNAB)
+  (geo_tools-help "format_put_sel_linetype")
+  (load_global_variable)
+  (setq ssnab (ssget "_I"))
+  (if ssnab
+    (if (> (sslength ssnab)1)
+      (progn
+	(sssetfirst)
+	(setq obj(car(entsel "\nВыберите объект, тип линии которого должен стать текущим: ")))
+	)
+      (setq obj(ssname ssnab 0))
+      )
+    (setq obj(car(entsel "\nВыберите объект, тип линии которого должен стать текущим: ")))
+    )
+  (if obj
+    (progn
+      (vla-StartUndoMark active_document)
+      (vla-put-ActiveLinetype active_document (vla-item (vla-get-linetypes active_document) (cdr(assoc 6 (entget obj)))))
+      (sssetfirst)
+      (princ (strcat"\nТип линии "(cdr(assoc 6 (entget obj)))" установлен текущим."))
+      (vla-EndUndoMark active_document)
+      )
+    (princ "*Ошибка*")
+    )
+  (princ)
+  )

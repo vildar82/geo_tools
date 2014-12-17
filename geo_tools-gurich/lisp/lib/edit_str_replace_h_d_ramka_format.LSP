@@ -1,0 +1,10 @@
+(defun edit_str_replace_h_d_ramka_format (vibor_ramka / n_x n_s summ h d perfix); повернуть рамку
+  (setq vibor_ramka(vl-string-subst "" "("(vl-string-subst "" ")" vibor_ramka)))
+  (setq n_x (+(vl-string-position (ascii "x") vibor_ramka 0 T)2))
+  (setq n_s (+(vl-string-position (ascii " ") vibor_ramka 0 T)2))
+  (setq summ (1+(strlen vibor_ramka)))
+  (setq d (substr vibor_ramka n_x (- summ n_x)))
+  (setq h (substr vibor_ramka n_s (- n_x n_s 1)))
+  (setq perfix(substr vibor_ramka 1 (1- n_s)))
+  (strcat perfix d "x" h)
+  )

@@ -1,0 +1,6 @@
+(defun calculation-text-xyz-syze ( object / minp maxp)
+  (if (eq (type object) 'ename)
+    (setq object (vlax-ename->vla-object object)))
+  (vla-GetBoundingBox object 'minp 'maxp)
+  (mapcar '- (vlax-safearray->list maxp) (vlax-safearray->list minp))
+  )

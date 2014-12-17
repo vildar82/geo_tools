@@ -1,0 +1,13 @@
+(defun C:edit_text_height ( / height)
+  (geo_tools-help "edit_text_height")
+  (initget 1 "МАКсимум МИНимум Норма")(setq height (getstring T "\nКакой хочешь размер текста [МАКсимум/МИНимум/Норма]: "))
+  (cond
+    ((eq height "МАКсимум")
+     (edit_resize_text_h_to_max))
+    ((eq height "МИНимум")
+     (edit_resize_text_h_to_min))
+    ((eq height "Норма")
+     (edit_resize_text_h_to_norm))
+    )
+  (princ)
+  )

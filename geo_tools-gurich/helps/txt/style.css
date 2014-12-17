@@ -1,0 +1,31 @@
+h1, h2, h3{text-align: center;}
+ul{list-style-position: inside}
+p{text-align: justify}
+* { margin: 0; padding: 0 }
+body { font-family: Verdana; font-size: 14px }
+a:link {color:#777777}
+a:hover{color:#FF0000}
+a:visited  {color:#000000}
+.all{ width: 1000px; position:absolute; left:50%; margin-left:-500px;}
+img {margin-top: 10px;margin-bottom: 10px}
+table {border-collapse: collapse;}
+td {border: 1px none #777777;  vertical-align:top; padding-top: 5px;}
+td p{margin: 0; padding: 0; text-indent: 0}
+td img {border-right: 10px solid #ffffff;}
+.links a {text-decoration: none}
+.alarm{color:#ff0000}
+.icon{margin: 0; padding: 0;  padding-right: 10px;}
+.data {font-style: italic; padding-top: 20px}
+.ncomm {font-weight: bold}/*имя команды кнопки*/
+.nfield {font-style: italic; font-weight: bold}/*имя поля файла*/
+.menu a {text-decoration: none}
+.book{font-weight: bold}
+.header {padding: 10px; height: 50px; text-align: center; line-height: 50px;}
+.menu {width: 190px; /*height: 500px;*/ margin: 0; padding-right: 15px; position: absolute; left: 10px; top: 80px; line-height: 25px}
+.text {border-left: 2px solid #000000; padding-left: 15px; margin: 10px 10px 10px 225px; min-height: 500px; text-indent: 30px; line-height: 20px}
+.footer {padding: 5px; height: 30px; line-height: 30px }
+.geo_tools_file{margin-top: 10px;margin-bottom: 10px;text-align: justify}
+.date a{text-decoration: none}
+.italic {font-style: italic}
+.bold {font-weight: bold}
+.code { font-family: Courier New; font-size: 16px; font-weight: bold}

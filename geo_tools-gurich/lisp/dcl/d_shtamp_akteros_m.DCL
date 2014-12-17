@@ -1,0 +1,31 @@
+// редактор шаблонов штампов
+d_shtamp_akteros_m: dialog{key="top";label="Редактор шаблонов штампа";
+:row{
+:column{
+:edit_box{key="c34";edit_width=10;}
+:edit_box{key="c37";edit_width=10;}
+:edit_box{key="c40";edit_width=10;}
+}
+:column{
+:edit_box{key="c36";edit_width=15;}
+:edit_box{key="c39";edit_width=15;}
+:edit_box{key="c42";edit_width=15;}
+}
+:column{
+:edit_box{key="c35";edit_width=10;}
+:edit_box{key="c38";edit_width=10;}
+:edit_box{key="c41";edit_width=10;}
+}
+:column{
+:edit_box{key="c5";edit_width=40;}
+:edit_box{key="c6";edit_width=40;}
+:edit_box{key="c7";edit_width=40;}
+}
+:column{
+:edit_box{key="c50";edit_width=5;}
+:edit_box{key="c51";edit_width=5;}
+:edit_box{key="c106";edit_width=5;}
+}
+}
+ok_cancel;
+}

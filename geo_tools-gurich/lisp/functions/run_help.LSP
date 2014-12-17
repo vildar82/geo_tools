@@ -1,0 +1,6 @@
+(defun C:run_help (/ file-name raz-name)
+  (setq file-name(getstring "\nимя файла справки:"))
+  (setq raz-name(getstring "\nимя раздела справки:"))
+  (if (and file-name raz-name)(help file-name raz-name))
+  (princ)
+  )

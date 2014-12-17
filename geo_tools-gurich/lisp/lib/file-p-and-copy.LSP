@@ -1,0 +1,23 @@
+(defun file-p-and-copy (patch patch-copy /)
+  (if
+    (vl-catch-all-error-p
+      (vl-catch-all-apply
+	'vlax-invoke-method
+	(list
+	  *file-system-object*
+	  'GetFile
+	  patch
+	  )))
+    (not
+      (vl-catch-all-error-p
+	(vl-catch-all-apply
+	  'vlax-invoke-method
+	  (list
+	    *file-system-object*
+	    'CopyFile
+	    patch-copy
+	    patch
+	    t
+	    ))))
+    )
+  )

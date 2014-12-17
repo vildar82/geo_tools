@@ -1,0 +1,5 @@
+(defun asin (a /)
+  (if (< a 1)
+    (atan (/ a (sqrt (- 1 (* a a)))))
+    )
+  )

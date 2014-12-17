@@ -1,0 +1,6 @@
+(defun C:kod (/ list-file list-result)
+  (if(setq list-file (file_read_to_list "D:\\temp\\test.txt"))
+    (setq list-result (edit-list-del-duplicate-item list-file)))
+  (file_write_list_to_file "D:\\temp\\test_.txt" list-result)
+  (princ)
+  )

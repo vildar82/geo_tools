@@ -1,0 +1,26 @@
+Макросы выбора типа линии, толщины и инструмента
+<p>Среди инструментов много кнопок выстрой смены текущего типа линий с последующим вызовом команды рисования. Устроено это так:</p>
+<p>Каждая кнопка это набор макрокоманд которые и выполняют всю настройку. Среди этих команд есть и мои.</p>
+<p><span class="bold">Линии.</span></p>
+<p>Самый простой тип.Пример макроса:</p>
+<p><span class="code">^C^C_format_check_line_typ;ЛИНИЯ_2-1;_line;</span></p>
+<p>символ &quot;;&quot; соответствует нажатию клавиши Enter</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:format_check_line_typ</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Введи имя типа линии:</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">ЛИНИЯ_2-1</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:_line</span></p>
+<p>Если указаного типа нет в рисунке он будет подгружен из внешнего .lin файла</p>
+<p>Со сплайнами абсолютно так же как и с линиями отличие только в конце, вместо стандартной команды отрезов вызывается сплайн.</p>
+<p><span class="bold">Полилинии.</span></p>
+<p>Пример макроса:</p>
+<p><span class="code">^C^C_format_check_line_typ;ЛИНИЯ_2-1;format_poly_width;0;_pLine;</span></p>
+<p>символ &quot;;&quot; соответствует нажатию клавиши Enter</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:format_check_line_typ</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Введи имя типа линии:</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">ЛИНИЯ_2-1</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:format_poly_width</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Введи толщину полилинии в милиметрах:</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">0</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:_pline</span></p>
+<p>Если указаного типа нет в рисунке он будет подгружен из внешнего .lin файла</p>
+<p>Программа вычисляет какой должна быть толцина полилинии чтобы при печати в текущем масштабе аннотаций на бумаге получилась введеная толщина.</p>

@@ -1,0 +1,11 @@
+(defun draw_2dpoly_vla (spece Points Lineweight / array)
+  (mapcar '(lambda (x) (setq array (append array x)))Points)
+  (setq Polyline (vla-AddPolyline spece (vlax-safearray-fill
+					  (vlax-make-safearray vlax-vbDouble (cons 0  (1-(length array))))
+					  array)))
+  (vla-put-Linetype Polyline "Continuous")
+  (vla-put-Lineweight Polyline Lineweight)
+  (vla-put-Closed Polyline 1)
+  (vla-put-Layer Polyline "0")
+  (vla-put-color Polyline 0)
+  )

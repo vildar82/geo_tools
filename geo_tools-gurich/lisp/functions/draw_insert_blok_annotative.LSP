@@ -1,0 +1,32 @@
+(defun C:draw_insert_blok_annotative ( / block_name block_name_A n_y a0); вставка анототивного условного знака
+(geo_tools-help "draw_insert_blok_annotative")
+  (setfunhelp "C:draw_insert_blok_annotative" "geo_tools.chm" "draw_insert_blok_annotative")
+  (initget 1 )(setq block_name (getstring T "\nВведи имя блока: "))
+  (initget 1 "Да Нет _Yes _No")(setq n_y (getkword "\nБедем поворачивать блок? [Да/Нет]: "))
+  (princ "\nУкажи точку вставки блока: ")
+  (if (not (or (eq block_name nil) (eq n_y nil)))
+    (progn     (if
+		 (not (tblobjname "block" block_name))
+		 (load_annotative_bloks)
+		 )
+      (setq a0 0.0)
+      (while T
+	(if (or (eq block_name "Куст")(eq block_name "Штриховка Кустарник")(eq block_name "Штриховка Кустарнички"))
+	  (progn
+	    (setvar "cmdecho" 0)
+	    (command "_insert" block_name pause "1" "1" a0 )
+	    (setvar "cmdecho" 1)
+	    (setq a0 (+ a0 37.0))
+	    (if (< 360 a0) (- a0 360))
+	    )
+	  (progn
+	    (setvar "cmdecho" 0)
+	    (command "_insert" block_name pause "1" "1" (if (not(eq n_y "Yes"))0.0 pause))
+	    (setvar "cmdecho" 1)
+	    ))
+	)
+      )
+    (princ "Не верные данные!")
+    )
+  (princ)
+  )

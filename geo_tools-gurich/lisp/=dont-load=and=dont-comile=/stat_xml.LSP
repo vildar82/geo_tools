@@ -1,0 +1,16 @@
+(defun C:stat_xml ( / o-doc childlist file summ)
+  ;статистика по xml файлу
+  (setq file(strcat(getvar "DWGPREFIX")"каталог координат.xml"))
+  (setq o-doc(XML-Get-XMLObject file))
+  (setq ChildList (XML-Get-ChildList o-doc))
+  (princ (strcat "\nФайл: "file))
+  (princ (strcat "\nКаталогов всего "(itoa (length ChildList))))
+  (setq summ 0)
+  (foreach x ChildList
+    (princ (strcat "\n" (XML-Get-Attribute x "name" "")" = "(itoa(vlax-get-property (XML-Get-Children x nil) 'length))))
+    (setq summ (+ summ(vlax-get-property (XML-Get-Children x nil) 'length)))
+    )
+  (princ (strcat "\nВсего записей: "(itoa summ)))
+  (vlax-release-object o-doc)
+  (princ)
+  )

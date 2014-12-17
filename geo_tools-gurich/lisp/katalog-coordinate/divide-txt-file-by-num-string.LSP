@@ -1,0 +1,36 @@
+(defun divide-txt-file-by-num-string (put-file kol-vo-str flag-file-name-messege / cell file list_cell num num-file current-filename list-filename)
+  ; делит указанный текстовый файл на много файлов с определенным количеством строк, возвращает списое полученых файлов
+;;;  (setq put-file (getfiled "Выбор файла" (getvar "DWGPREFIX")  "txt" 0))
+;;;  (setq kol-vo-str 1000)
+;;;  (setq flag-file-name-messege nil)
+  (setq num-file 1)
+  (if (file-p put-file)
+    (progn
+      (setq file(open put-file "r"))
+      (setq cell (read-line file))
+      (while cell
+	(setq num 0)
+	(while (and cell (/= num kol-vo-str))
+	  (setq list_cell(append list_cell (list cell)))
+	  (setq cell (read-line file))
+	  (setq num (1+ num))
+	  )
+	(if list_cell
+	  (progn
+	    (setq current-filename (strcat (vl-filename-directory put-file)"\\"(vl-filename-base put-file)"_"(itoa num-file)(vl-filename-extension put-file)))
+	    (setq list-filename (append list-filename (list current-filename)))
+	    (file_write_list_to_file current-filename list_cell)
+	    )
+	  )
+	(setq list_cell nil)
+	(if cell(setq num-file (1+ num-file)))
+	(grtext -1 (strcat"Записано файлов: "(itoa num-file)))
+	(if flag-file-name-messege(name-file-to-messege (strcat"Записано файлов: "(itoa num-file))))
+	)
+      (close file)
+      (grtext -1 "")
+      (princ (strcat "\nЗаписано "(itoa num-file)" файлов."))
+      )
+    )
+  list-filename
+  )

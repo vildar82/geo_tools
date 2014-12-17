@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root><record variable="server-check-update-flag" type="STR" value="1"/><record variable="server-auto-update-flag" type="STR" value="0"/><record variable="geo_tools-server-patch" type="STR" value="\\w001\GEO\!Документы!\geo_tools"/><record variable="draw_xy_coor_be_krest_setki" type="STR" value="Компактно"/><record variable="path-katalog-coordinate" type="STR" value="B:\!Координаты!\каталог координат.xml"/></root>

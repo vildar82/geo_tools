@@ -1,0 +1,17 @@
+Макрос для отрисовки проводов
+<p>Автоматизация отрисовки проводов.</p>
+<p>Программа предназначена для отрисовки линий воздушных коммуникаций, поддерживаются следующие блоки (условные знаки): Связь, ЛЭП ВН, ЛЭП НН. По выбору предлагается отрисовка линии соединяющей указываемые точки, что соответствует условному знаку комуникаций на незастроеной территории) линии наносятся типом линии одноименным блоку(для последующего облегчения построения профиля).</p>
+<p>Пример макроса(содержимое кнопки):</p>
+<p><span class="code">^C^Cdraw_provod_and_insert_blocks_arrows;Связь;Да</span></p>
+<p>символ &quot;;&quot; соответствует нажатию клавиши Enter</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда: draw_provod_and_insert_blocks_arrows</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code"> Введи имя блока:</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code"> Связь</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code"> Будем соединять блоки линией? [Да/Нет]:</span></p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Да</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code"> Укажи начальную точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user"> указывает точку, точнее начальный столб</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code"> Укажи следующую точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user"> указывает точку, точнее следующий столб. (этот запрос повторяется циклически, пустой ввод выход из программы)</p>
+<p>Пример работы программы</p>
+<img src="draw_provod_and_insert_blocks_arrows.gif" width="579" height="543" alt="Пример работы программы">

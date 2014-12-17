@@ -1,0 +1,17 @@
+Центрирование подписей
+<p>Указываем текст и три точки по углам здания</p>
+<p>Вызов программы:</p>
+<p><img class="icon" src="macr.gif" alt="macro"><span class="code">Команда:edit_text_move_to_center_building</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Выбери текст:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает объект типа текст</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи первую точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на первом угле здания</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи вторую точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на втором угле здания</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи третью точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">Указывает точку на трутьем угле здания</p>
+<p>Надпись перемещается в центр здания, ориентированная по длинной стене. Стиль текста не меняется, если контур здания мал и не позволяет выполнить надпись соответствующей высотой шрифта - высота шрифта будет уменьшена в плоть до минимально допустимой по УЗ (Для шрифтов не указанных в УЗ максимальная высота букв 3.0мм минимальная 1.6мм в плане). Если же даже в минимальном размере надпись все равно не помещается от об этом будет сообщено пользователю:</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Подпись не входит в контур, попробуй разместить рядом.</span></p>
+<p>Центром здания принимается центральная точка прямоугольника построеного по трем указанным точкам.</p>
+<p>Пример работы кнопки</p>
+<img src="edit_text_move_to_center_building.gif" width="357" height="279" alt="Пример работы кнопки">

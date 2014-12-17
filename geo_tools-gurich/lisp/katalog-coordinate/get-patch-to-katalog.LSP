@@ -1,0 +1,6 @@
+(defun get-patch-to-katalog ()
+  (file-dat-xml-read "path-katalog-coordinate" "b:\\!Координаты!\\каталог координат.xml")
+  )
+(defun put-patch-to-katalog (patch /)
+  (file-dat-xml-write "path-katalog-coordinate" patch)
+  )

@@ -1,0 +1,26 @@
+(defun C:draw_shelf_be_text (/ t1 text dtext t2 t3)
+(geo_tools-help "draw_shelf_be_text")
+  (initget)(setq t1(getpoint "\nУкажи точку: "))
+  (while (not (eq t1 nil))
+    (initget)(setq text (car (entsel "\nВыбери текст: ")))
+    (setq dtext (calculation_text_height_be_dxf_code (entget text)))
+    (setq t2 (polar
+	       (polar (cdr (assoc 10 (entget text)))(-(cdr (assoc 50 (entget text)))(/ pi 2)) (/(cdr (assoc 40 (entget text)))4))
+	       (+(cdr (assoc 50 (entget text)))pi)(/(cdr (assoc 40 (entget text)))4))
+	  );(list (/(cdr (assoc 40 (entget text)))4) (/(cdr (assoc 40 (entget text)))4)0)))
+    (setq t3 (polar t2 (cdr (assoc 50 (entget text))) (+ dtext(/(cdr (assoc 40 (entget text)))2))));(setq t3 (mapcar '+ t2 (list (+ dtext (/(cdr (assoc 40 (entget text)))2)) 0 0)))
+    (if
+      (< (distance t1 t2) (distance t1 t3))
+      (progn
+	(entmake (list '(0 . "LINE") '(6 . "Continuous") (append '(10) t1) (append '(11) t2)))
+	(entmake (list '(0 . "LINE") '(6 . "Continuous") (append '(10) t2) (append '(11) t3)))
+	)
+      (progn
+	(entmake (list '(0 . "LINE") '(6 . "Continuous") (append '(10) t1) (append '(11) t3)))
+	(entmake (list '(0 . "LINE") '(6 . "Continuous") (append '(10) t3) (append '(11) t2)))
+	)
+      )
+    (initget)(setq t1(getpoint "\nУкажи точку: "))
+    )
+  (princ)
+  )

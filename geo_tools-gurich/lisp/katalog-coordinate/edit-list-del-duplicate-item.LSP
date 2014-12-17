@@ -1,0 +1,17 @@
+(defun edit-list-del-duplicate-item (input-list / item n)
+  ; удаляет из списка дубликаты
+  (setq n 1)
+  (while (not(or(<(length input-list)n)(=(length input-list)n)))
+    (setq item (car input-list))
+    (setq input-list (cdr input-list))
+    (while (member item input-list)
+      (setq input-list(edit-list-del-item-by-number (analysis-number-item-in-list item input-list) input-list))
+      )
+    (setq input-list (append input-list (list item)))
+    (setq n (1+ n))
+    )
+  (setq item (car input-list))
+  (setq input-list (cdr input-list))
+  (setq input-list (append input-list (list item)))
+  input-list
+  )

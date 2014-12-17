@@ -1,0 +1,5 @@
+(defun acos (a /)
+  (if (<= a 1)
+    (atan (/ (sqrt (- 1 (* a a))) a))
+    )
+  )

@@ -1,0 +1,5 @@
+(defun geo_tools-help ( fun )
+  (setq fun(vl-string-translate  "-" "_" fun))
+  (setfunhelp (strcat "C:" fun) "geo_tools.chm" fun)
+  (princ)
+  )

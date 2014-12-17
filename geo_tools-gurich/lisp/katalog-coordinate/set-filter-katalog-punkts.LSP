@@ -1,0 +1,15 @@
+(defun set-filter-katalog-punkts (filter-list / patch old-filter-list)
+  (setq patch (strcat *geo_tools_user_dat_dir* "\\data\\data-filter-katalog-punkts.xml"))
+  (if (file-p patch)
+    (progn
+      (setq old-filter-list (file-xml-to-list patch))
+      (setq old-list-tipe-punkts (get-item-by-name-in-list old-filter-list "list-tipe-punkts"))
+      (setq new-list-tipe-punkts (get-item-by-name-in-list filter-list "list-tipe-punkts"))
+      (foreach x old-list-tipe-punkts
+	(setq new-list-tipe-punkts(put-item-by-name-in-list new-list-tipe-punkts (car x) (cadr x)))
+	)
+      (setq filter-list (put-item-by-name-in-list filter-list "list-tipe-punkts" new-list-tipe-punkts))
+      )
+    )
+  (list-to-file-xml patch filter-list)
+  )

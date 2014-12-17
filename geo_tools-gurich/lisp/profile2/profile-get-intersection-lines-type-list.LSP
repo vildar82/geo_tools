@@ -1,0 +1,10 @@
+(defun profile-get-intersection-lines-type-list ( / file-list result-list str1 str2)
+  (setq file-list(file_read_to_list (strcat *geo_tools_user_dat_dir* "\\data\\intersection-lines-list.dat")))
+  (repeat (/ (length file-list) 2)
+    (setq str1 (car file-list))
+    (setq str2 (cadr file-list))
+    (setq file-list(cddr file-list))
+    (setq result-list (append result-list (list (list str1 str2 ))))
+    )
+  result-list
+  )

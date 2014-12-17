@@ -1,0 +1,6 @@
+(defun load_annotative_bloks ()
+  (setvar "nomutt" 1)
+  (command "_insert" "annotative_bloks" (command))
+  (command "_-purge" "_b" "annotative_bloks" "_n")
+  (setvar "nomutt" 0)
+  )

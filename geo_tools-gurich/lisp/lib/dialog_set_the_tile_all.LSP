@@ -1,0 +1,5 @@
+(defun dialog_set_the_tile_all (list_cell / )
+  (setq n 1)
+  (repeat (length list_cell)
+    (set_tile (strcat "c" (itoa n)) (nth  (1- n) list_cell))
+    (setq n (1+ n))))

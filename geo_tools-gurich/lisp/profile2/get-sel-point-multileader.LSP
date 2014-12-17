@@ -1,0 +1,11 @@
+(defun get-sel-point-multileader (object / points)
+  (if (eq (type object) 'ename)
+    (setq object (vlax-ename->vla-object object)))
+  (if (> (vla-get-LeaderCount object) 0)
+    (progn
+    (setq points (vlax-safearray->list(vlax-variant-value(vla-GetLeaderLineVertices object 0))))
+    (list (nth 0 points)(nth 1 points)(nth 2 points))
+    )
+    (getpoint "\nУкажи точку на плане: ")
+    )
+  )

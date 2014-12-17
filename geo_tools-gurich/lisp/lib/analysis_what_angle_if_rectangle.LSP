@@ -1,0 +1,53 @@
+(defun analysis_what_angle_if_rectangle (t1 t2 t4 t5 p_num long / text_ug)
+(mapcar '(lambda (x)
+	   (if (and (equal p_num (car x) 1)(eq long (angle(cadr x)(caddr x))))
+	     (setq text_ug (cadddr x))
+	     )
+	   )
+	(if (eq(calculation_angle_be_3points t4 t2 t1) pi)
+	  (list
+	    (list t1 t1 t2 "ÂË")
+	    (list t1 t2 t1 "Ğ")
+	    (list t1 t1 t5 "")
+	    (list t1 t5 t1 "ÂÏ")
+	    
+	    (list t2 t1 t2 "ÂÏ")
+	    (list t2 t2 t1 "")
+	    (list t2 t1 t5 "ÂË")
+	    (list t2 t5 t1 "Ğ")
+	    
+	    (list t4 t1 t2 "Ğ")
+	    (list t4 t2 t1 "ÂË")
+	    (list t4 t1 t5 "ÂÏ")
+	    (list t4 t5 t1 "")
+	    
+	    (list t5 t1 t2 "")
+	    (list t5 t2 t1 "ÂÏ")
+	    (list t5 t1 t5 "Ğ")
+	    (list t5 t5 t1 "ÂË")
+	    )
+	  (list
+	    (list t1 t1 t2 "")
+	    (list t1 t2 t1 "ÂÏ")
+	    (list t1 t1 t5 "ÂË")
+	    (list t1 t5 t1 "Ğ")
+	    
+	    (list t2 t1 t2 "Ğ")
+	    (list t2 t2 t1 "ÂË")
+	    (list t2 t1 t5 "")
+	    (list t2 t5 t1 "ÂÏ")
+	    
+	    (list t4 t1 t2 "ÂÏ")
+	    (list t4 t2 t1 "")
+	    (list t4 t1 t5 "Ğ")
+	    (list t4 t5 t1 "ÂË")
+	    
+	    (list t5 t1 t2 "ÂË")
+	    (list t5 t2 t1 "Ğ")
+	    (list t5 t1 t5 "ÂÏ")
+	    (list t5 t5 t1 "")
+	    )
+	  )
+	)
+  text_ug
+  )

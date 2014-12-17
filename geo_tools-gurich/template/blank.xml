@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<root>
+<properties>
+<attributs>
+<attribut name="name" comment="Имя пункта"/>
+<attribut name="N" comment="Северная координата"/>
+<attribut name="E" comment="Восточная координата"/>
+<attribut name="Z" comment="Отметка"/>
+<attribut name="type" comment="Тип пункта"/>
+<attribut name="address" comment="Адрес, местоположение"/>
+<attribut name="year" comment="Год получения сведений"/>
+<attribut name="comment" comment="Коментарий"/>
+</attributs>
+<type-puncts>
+<type-punct name="ст.репер" block-name="МГГТ репер стенной"/>
+<type-punct name="гор.марка" block-name="МГГТ грунтовые знаки"/>
+<type-punct name="ПЗ" block-name="МГГТ грунтовые знаки"/>
+<type-punct name="век.репер" block-name="МГГТ вековой репер"/>
+<type-punct name="сигнал" block-name="МГГТ сигнал"/>
+<type-punct name="ст.марка" block-name="МГГТ стенная марка"/>
+<type-punct name="ст.знак штанга" block-name="МГГТ стенной знак штанга"/>
+<type-punct name="надстройка" block-name="МГГТ надстройка"/>
+<type-punct name="пирамида" block-name="МГГТ пирамида"/>
+<type-punct name="местн.предмет" block-name="МГГТ местный предмет"/>
+<type-punct name="марка" block-name="МГГТ тип знака не определен"/>
+<type-punct name="керн" block-name="МГГТ керн гвоздь дюбель итд"/>
+<type-punct name="рельс" block-name="МГГТ грунтовые знаки"/>
+<type-punct name="дюбель" block-name="МГГТ керн гвоздь дюбель итд"/>
+<type-punct name="гвоздь" block-name="МГГТ керн гвоздь дюбель итд"/>
+</type-puncts>
+</properties>
+<puncts>
+<squares/>
+<z-only/>
+</puncts>
+</root>

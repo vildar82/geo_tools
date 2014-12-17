@@ -1,0 +1,34 @@
+Координаты точек
+<p>Чертит таблицу координат указываемых точек</p>
+<p>Вставляемая таблица это &quot;настоящий&quot; автокадовский объект с таким названием.</p>
+<p>Заголовок вставляемой таблицы</p>
+<img src="draw_coord_table_be_pick_point_header.png" width="259" height="55" alt="Заголовок">
+<p><span class="code">Команда: draw_coord_table_be_pick_point</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"></p>
+<img src="draw_coord_table_be_pick_point_dialog.png" width="249" height="251" alt="Диалоговое окно">
+<p><img class="icon" src="user.gif" alt="user">выбирает параметры желаемой таблицы и сопутствующих подписей, от этих параметров зависит и результат и последующие запросы</p>
+<p>Поле <span class="bold">Таблица</span> позволяет выбрать будет создаваться новая таблица или данные будут добавляться в существующую. В первом случае будет выведен запрос на точку вставки новой таблицы, а во втором запрос будет на указание таблицы в которую будут дабавлены данные</p>
+<p><span class="bold">Новая</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи точку вставки таблицы координат:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает точку, таблица будет вставляться в низ и на право</p>
+<p><span class="bold">Продолжить</span></p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Выбери существующую таблицу координат:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает объект пипа таблица</p>
+<p>Поле <span class="bold">Подписи точек</span> - под подписями имеется в виду мультивыноски. Режимы отвечают за работу с мультивыносками:</p>
+<p><span class="bold">Не надо</span> - мультивыносок нет и не нужно.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает точку, у которой будут определяться координаты</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Что это?:</span></p>
+<p><img class="icon" src="user.gif" alt="user">вводит текстовую строку которая будет помещена в графу наименование таблицы</p>
+<p><span class="bold">Вставлять</span> - мультивыносок нет но их нужно вставлять.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи точку:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает точку, у которой будут определяться координаты</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Что это?:</span></p>
+<p><img class="icon" src="user.gif" alt="user">вводит текстовую строку которая будет помещена в графу наименование таблицы и в текст добавленой мультивыноски</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Укажи точку куда положить подпись?&lt;ENTER - пропустить эту подпись&gt;:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает точку вставка текстовой части мультивыноски или ENTER (пустой ввод) если конкретно эта подпись не требуется.</p>
+<p><span class="bold">Уже есть</span> - если на всех определяемых точках уже есть мультивыноски.</p>
+<p><img class="icon" src="acad.gif" alt="acad"><span class="code">Выбери выноску:</span></p>
+<p><img class="icon" src="user.gif" alt="user">указывает существующую мультивыноску. Координаты определяются из точки указания мультивыноски, а <span class="italic">Наименование</span><img class="icon" src="user.gif" alt="user"> из текстовой строки</p>
+<p>Запросы точек и мультивыносок повторяются циклично, выход из программы пустой ввод.</p>
+<p>Поле <span class="italic">Наименование</span> отвечает за начальный номер пункта в таблице</p>

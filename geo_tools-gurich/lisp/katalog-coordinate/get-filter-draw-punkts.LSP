@@ -1,0 +1,21 @@
+(defun get-filter-katalog-punkts (/ filter-list patch)
+  (setq patch (strcat *geo_tools_user_dat_dir* "\\data\\data-filter-katalog-punkts.xml"))
+  (setq filter-list(if(file-p patch)(file-xml-to-list patch)))
+  (if (= filter-list nil)
+    (setq filter-list
+	   (list
+	     (list "filter-mode" 1)
+	     (list "no-z" 1)
+	     (list "yes-z" 1)
+	     (list "no-year" 1)
+	     (list "years-limit" 0)
+	     (list "year-min" 1950)
+	     (list "year-max" 2050)
+	     (list "tipe-filter" 1)
+	     (list "list-tipe-punkts" (list (list "не определен" 0)))
+	     (list "on-off-punkt" 0)
+	     )
+	  )
+    )
+  filter-list
+  )
