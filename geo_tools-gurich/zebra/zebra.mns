@@ -1,0 +1,15 @@
+***MENUGROUP=ZEBRA
+
+***TOOLBARS
+**Zebra
+Zebra_0   [_Toolbar("Zebra", _Floating, _Show, 90, 172, 1)]
+Zebra_1   [_Button("Гидроизоляция (ЖД) полилинией", "Zebra.bmp", "Zebra.bmp")]^C^C(if (null C:Zebra)(load "zebra"));zebra;
+Zebra_2   [_Button("Гидроизоляция (ЖД) штриховкой", "Zebra2.bmp", "Zebra2.bmp")]^C^C(if (null C:Zebra)(load "zebra"));zebra2;
+Zebra_3   [_Button("Гидроизоляция (ЖД) штриховкой черной белой", "Zebra3.bmp", "Zebra3.bmp")]^C^C(if (null C:Zebra)(load "zebra"));zebra3;
+Zebra_4   [_Button("ЖД сплошной штриховкой", "Zebra4.bmp", "Zebra4.bmp")]^C^C(if (null C:Zebra)(load "zebra"));zebra4;
+Zebra_5   [_Button("ЖД путь", "RailWay.bmp", "RailWay.bmp")]^C^C(if (null C:RW)(load "zebra"));RW;
+
+***HELPSTRINGS
+Zebra_1   [Рисование гидроизоляции (ФБС ЖД) полилинией]
+Zebra_2   [Рисование гидроизоляции (ФБС ЖД) штриховкой]
+Zebra_5   [Рисование ЖД отрезками]

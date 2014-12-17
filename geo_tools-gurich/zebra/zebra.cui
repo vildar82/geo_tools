@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!--
+Внимание! Не изменяйте содержимое этого файла.
+При попытке редактирования этого файла с помощью редактора XML возможна потеря адаптации и функций переноса.
+Если требуется изменить информацию в файле адаптации, используйте диалоговое окно "Настройка интерфейса пользователя" в продукте.
+Чтобы открыть диалоговое окно "Адаптация интерфейса пользователя", щелкните меню "Сервис" > "Адаптация" > "Интерфейс" или введите НПИ в командной строке. 
+-->
+<CustSection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileVersion MajorVersion="0" MinorVersion="5" IncrementalVersion="1" UserVersion="1" />
+  <Header>
+    <CommonConfiguration>
+      <CommonItems>
+        <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+      </CommonItems>
+    </CommonConfiguration>
+    <WorkspaceRoot>
+      <WorkspaceConfigRoot />
+    </WorkspaceRoot>
+  </Header>
+  <MenuGroup Name="ZEBRA">
+    <MacroGroup Name="ZEBRAMacros">
+      <MenuMacro UID="Zebra_1">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1" />
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Name xlate="true" UID="XLS_0002">Гидроизоляция (ЖД) полилинией</Name>
+          <Command>^C^C(if (null C:Zebra)(load "zebra"));zebra; </Command>
+          <HelpString xlate="true" UID="XLS_0012">Рисование гидроизоляции (ФБС ЖД) полилинией</HelpString>
+          <SmallImage Name="Zebra.bmp" />
+          <LargeImage Name="Zebra.bmp" />
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Zebra_2">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1" />
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Name xlate="true" UID="XLS_0004">Гидроизоляция (ЖД) штриховкой</Name>
+          <Command>^C^C(if (null C:Zebra)(load "zebra"));zebra2; </Command>
+          <HelpString xlate="true" UID="XLS_0013">Рисование гидроизоляции (ФБС ЖД) штриховкой</HelpString>
+          <SmallImage Name="Zebra2.bmp" />
+          <LargeImage Name="Zebra2.bmp" />
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Zebra_3">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1" />
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Name xlate="true" UID="XLS_0006">Гидроизоляция (ЖД) штриховкой черной белой</Name>
+          <Command>^C^C(if (null C:Zebra)(load "zebra"));zebra3; </Command>
+          <SmallImage Name="Zebra3.bmp" />
+          <LargeImage Name="Zebra3.bmp" />
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Zebra_4">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1" />
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Name xlate="true" UID="XLS_0008">ЖД сплошной штриховкой</Name>
+          <Command>^C^C(if (null C:Zebra)(load "zebra"));zebra4; </Command>
+          <SmallImage Name="Zebra4.bmp" />
+          <LargeImage Name="Zebra4.bmp" />
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Zebra_5">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1" />
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Name xlate="true" UID="XLS_0010">ЖД путь</Name>
+          <Command>^C^C(if (null C:RW)(load "zebra"));RW; </Command>
+          <HelpString xlate="true" UID="XLS_0014">Рисование ЖД отрезками</HelpString>
+          <SmallImage Name="RailWay.bmp" />
+          <LargeImage Name="RailWay.bmp" />
+        </Macro>
+      </MenuMacro>
+    </MacroGroup>
+    <MenuRoot>
+      <AcceleratorRoot />
+      <OverrideRoot />
+      <MouseButtonRoot />
+      <DigitizerButtonRoot />
+      <PopMenuRoot />
+      <ToolbarRoot>
+        <Toolbar ToolbarOrient="floating" ToolbarVisible="show" xval="90" yval="172" rows="1" UID="Zebra_0">
+          <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+          <Alias>Zebra</Alias>
+          <Name xlate="true" UID="XLS_0001">Zebra</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_0001">
+            <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+            <Name xlate="true" UID="XLS_0003">Гидроизоляция (ЖД) полилинией</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Zebra_1" />
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_0002">
+            <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+            <Name xlate="true" UID="XLS_0005">Гидроизоляция (ЖД) штриховкой</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Zebra_2" />
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_0003">
+            <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+            <Name xlate="true" UID="XLS_0007">Гидроизоляция (ЖД) штриховкой черной белой</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Zebra_3" />
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_0004">
+            <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+            <Name xlate="true" UID="XLS_0009">ЖД сплошной штриховкой</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Zebra_4" />
+            </MenuItem>
+          </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_0005">
+            <ModifiedRev MajorVersion="17" MinorVersion="2" UserVersion="1" />
+            <Name xlate="true" UID="XLS_0011">ЖД путь</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Zebra_5" />
+            </MenuItem>
+          </ToolbarButton>
+        </Toolbar>
+      </ToolbarRoot>
+      <ScreenMenuRoot />
+      <ImageMenuRoot />
+      <TabletMenuRoot />
+      <DoubleClickRoot />
+      <ToolPanelRoot />
+      <PanelSetRoot>
+        <PanelSet UID="PSTU_0001" />
+      </PanelSetRoot>
+      <QuickPropertiesRoot />
+      <RolloverTooltipRoot />
+    </MenuRoot>
+  </MenuGroup>
+</CustSection>
